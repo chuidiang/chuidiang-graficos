@@ -1,0 +1,30 @@
+<assembly>
+   <id>bin</id>
+   <formats>
+      <format>zip</format>
+   </formats>
+   <fileSets>
+     <fileSet>
+        <directory>src/main/help</directory>
+	<outputDirectory>/help</outputDirectory>
+</fileSet>
+     <fileSet>
+        <directory>src/main/java</directory>
+	<outputDirectory>/src</outputDirectory>
+</fileSet>
+<fileSet>
+      <directory>target</directory>
+      <outputDirectory>/bin</outputDirectory>
+      <includes>
+        <include>*.jar</include>
+      </includes>
+    </fileSet>
+   </fileSets>
+   <dependencySets>
+      <dependencySet>
+	 <outputDirectory>/bin</outputDirectory>
+         <scope>runtime</scope>
+      </dependencySet>
+   </dependencySets>
+</assembly>
+
