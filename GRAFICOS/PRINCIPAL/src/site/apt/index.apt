@@ -22,3 +22,5 @@ Lienzo lienzo = new Lienzo(egc);
 Rejilla r = new Rejilla(...);
 lienzo.tomaObjetoGrafico(r);
 +---
+
+ Cualquier duda o sugerencia puedes dejarla en el foro {{http://foro.chuidiang.com}}

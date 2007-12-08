@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE maven PUBLIC "-//APACHE//DTD Documentation Maven//EN" "http://maven.apache.org/maven-navigation-1.0.xsd">
-<project name="Maven">
-    
+<project name="Libreria Grafica en Java">
+
 	<bannerLeft>
 		<name>Chuidiang Roxas</name>
 		<src>serpi.gif</src>
 		<href>http://www.chuidiang.com/</href>
 	</bannerLeft>
-	
-	<!--bannerRight>
-		<src>http://maven.apache.org/images/maven-small.gif</src>
-		</bannerRight-->
+
+	<bannerRight>
+		<src>
+			http://i.creativecommons.org/l/by-nc-sa/2.5/es/88x31.png
+		</src>
+		<href>
+			http://creativecommons.org/licenses/by-nc-sa/2.5/es/deed.es
+		</href>
+	</bannerRight>
 	<body>
 		<links>
-			<item name="Inicio" href="http://proyectos.chuidiang.com/graficos"  />
-			<item name="Apache" href="http://www.apache.org/"  />
+			<item name="Libreria Grafica"
+				href="http://proyectos.chuidiang.com/graficos/index.html" />
+			<item name="Apache" href="http://www.apache.org/" />
 			<item name="Maven 2" href="http://maven.apache.org/maven2/" />
 		</links>
 
@@ -22,10 +28,19 @@
 			<item name="Introducci&oacute;n" href="index.html" />
 			<item name="Descarga" href="download.html" />
 			<!--item name="Release Notes" href="release-notes.html" />
-			<item name="General Information" href="about.html" />
-			<item name="Road Map" href="roadmap.html" /-->
+				<item name="General Information" href="about.html" />
+				<item name="Road Map" href="roadmap.html" /-->
 		</menu>
-		${reports}
+		
+		<menu name="Informacion">
+		   <item name="Licencia" href="licencia.html"/>
+		   <item name="Desarrolladores" href="desarrolladores.html"/>
+		</menu>
+		<menu name="Informes">
+		   <item name="Cobertura" href="cobertura/index.html"/>
+		   <item name="Javadoc" href="apidocs/index.html"/>
+		   <item name="Fuentes" href="xref/index.html"/>
+		</menu>
 	</body>
 </project>
 
