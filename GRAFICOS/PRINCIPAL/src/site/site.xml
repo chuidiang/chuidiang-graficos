@@ -18,28 +18,26 @@
 	</bannerRight>
 	<body>
 		<links>
-			<item name="Libreria Grafica"
+			<item name="Libreria Grafica en Java"
 				href="http://proyectos.chuidiang.com/graficos/index.html" />
-			<item name="Apache" href="http://www.apache.org/" />
-			<item name="Maven 2" href="http://maven.apache.org/maven2/" />
+			<item name="Foro" href="http://foro.chuidiang.com/" />
+			<item name="Blog" href="http://blog.chuidiang.com/" />
 		</links>
 
 		<menu name="Librer&iacute;a Gr&aacute;fica">
 			<item name="Introducci&oacute;n" href="index.html" />
 			<item name="Descarga" href="download.html" />
-			<!--item name="Release Notes" href="release-notes.html" />
-				<item name="General Information" href="about.html" />
-				<item name="Road Map" href="roadmap.html" /-->
+			<item name="Ejemplos" href="ejemplos.html" />
 		</menu>
-		
+
 		<menu name="Informacion">
-		   <item name="Licencia" href="licencia.html"/>
-		   <item name="Desarrolladores" href="desarrolladores.html"/>
+			<item name="Licencia" href="licencia.html" />
+			<item name="Desarrolladores" href="desarrolladores.html" />
 		</menu>
 		<menu name="Informes">
-		   <item name="Cobertura" href="cobertura/index.html"/>
-		   <item name="Javadoc" href="apidocs/index.html"/>
-		   <item name="Fuentes" href="xref/index.html"/>
+			<item name="Cobertura" href="cobertura/index.html" />
+			<item name="Javadoc" href="apidocs/index.html" />
+			<item name="Fuentes" href="xref/index.html" />
 		</menu>
 	</body>
 </project>
