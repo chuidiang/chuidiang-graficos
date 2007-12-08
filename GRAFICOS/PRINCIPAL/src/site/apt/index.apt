@@ -1,0 +1,24 @@
+Libreria grafica
+
+  La intencion de esta libreria es permitir realizar graficos 2D de una forma sencilla.
+
+ Las clases principal que representa el componente grafico es <Lienzo>. Debemos instanciar esta clase y es la que usaremos para colocar en nuestro panel o ventana. La clase <Lienzo> se configura pasandole una <EscalaGrafica>. La <EscalaGrafica> mas habitual sera la <EscalaGraficaCartesiana>. A la <EscalaGraficaCartesiana> se le pasan los limites del dibujo, indicando los valores minimos y maximos deseados para la x y para la y. Por ejemplo, para dibujar una funcion <sin(x)>, puede quererse que la x vaya de 0 a 2*PI, mientras que la y deberia ir de -1.0 a 1.0
+
+ El siguiente codigo de ejemplo muestra como instanciar e inicializar un <Lienzo> y la <EscalaGrafica>
+
++------------------------------------------
+EscalaGraficaCartesiana egc = new EscalaGraficaCartesiana(
+   0.0,-1.0,2*Math.PI,1.0);
+Lienzo lienzo = new Lienzo(egc);
++------------------------------------------
+
+ Una vez que tenemos preparado el <Lienzo>, solo tenemos que anadirle <ObjetoGrafico>. Un <ObjectoGrafico> es una clase que tenga definido un metodo <dibujate(EscalaGrafica eg)>. En ese metodo el <ObjetoGrafico> solo tiene que dibujarse usando los metodos que le proporciona la <EscalaGrafica> recibida como parametro. Las coordendas que usa para dibujarse son directamente las que se decidieron al inicializar la <EscalaGrafica>. Es decir, para dibujar el punto (PI,1.0) de la funcion <sin(x)>, simplemente dibujamos un punto en las coordenadas (PI,1.0)
+
+ En el paquete <com.chuidiang.graficos.objetos_graficos> tienes varios <ObjetoGrafico> para elegir. Puedes hacerte ademas los tuyos propios.
+
+ En el siguiente codigo de ejemplo se mete una Rejilla 
+
++---
+Rejilla r = new Rejilla(...);
+lienzo.tomaObjetoGrafico(r);
++---

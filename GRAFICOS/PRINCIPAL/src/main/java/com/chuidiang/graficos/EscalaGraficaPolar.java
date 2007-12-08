@@ -1,7 +1,7 @@
 /**
- * Javier Abell�n. 6 Abril 2006
+ * Javier Abellan. 6 Abril 2006
  * 
- * Librer�a gr�fica
+ * Libreria grafica
  */
 
 package com.chuidiang.graficos;

@@ -1,0 +1,38 @@
+Descarga de la libreria grafica
+
+ La libreria grafica esta disponible desde maven o bien puedes decargarte directamente el jar.
+
+ Las distintas versiones de jar estan disponibles en {{http://maven2.chuidiang.com/com/chuidiang/graficos/}}. Selecciona el numero de version deseado y luego descarga el .jar. La version actual es {{http://maven2.chuidiang.com/com/chuidiang/graficos/1.0/graficos-1.0.jar}}
+
+Descarga desde maven2
+
+ Para poder usar la libreria grafica en tus proyectos maven, en el pom.xml debes anadir la url del repositorio y la dependencia
+
++-------------------------------------------------------------------------------
+<project>
+   ...
+   <repositories>
+      <repository>
+         <id>com.chuidiang</id>
+         <name>com.chuidiang</name>
+         <layout>default</layout>
+         <url>http://maven2.chuidiang.com</url>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
+      </repository>
+      ...
+   </repositories>
+   ...
+   <dependencies>
+      <dependency>
+         <groupId>com.chuidiang</groupId>
+	 <artifactId>graficos</artifactId>
+         <version>1.0</version>
+         <scope>compile</scope>
+      </dependency>
+      ...
+   </dependencies>
+   ...
+</project>
++-------------------------------------------------------------------------------
