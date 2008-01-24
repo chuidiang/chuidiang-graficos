@@ -177,7 +177,7 @@ public class CapaCursor extends JComponent
 		coordenadasRaton.setLocation(e.getX(), e.getY());
 
 		Point2D coordenadasUsuario = this.escala
-				.dameCoordenadaUsuario(coordenadasRaton);
+				.getCoordenadaUsuario(coordenadasRaton);
 
 		boolean repintadoGlobal = false;
 

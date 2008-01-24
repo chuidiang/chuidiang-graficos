@@ -187,7 +187,7 @@ public class RejillaFija extends AbstractObjetoGrafico
      */
     private void rellenaXY()
     {
-        extremos = escala.dameExtremosCartesianos();
+        extremos = escala.getExtremosCartesianos();
 
         x = new double[numeroColumnas];
         for (int i = 0; i < numeroColumnas; i++)

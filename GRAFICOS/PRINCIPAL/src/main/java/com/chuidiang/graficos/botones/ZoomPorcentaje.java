@@ -75,7 +75,7 @@ public class ZoomPorcentaje extends JButton
      */
     protected void efectuarZoom()
     {
-        Rectangle2D extremos = escala.dameExtremosCartesianos(  );
+        Rectangle2D extremos = escala.getExtremosCartesianos(  );
 
         Rectangle2D nuevo = UtilRectangulo.agrandar( 
               extremos,

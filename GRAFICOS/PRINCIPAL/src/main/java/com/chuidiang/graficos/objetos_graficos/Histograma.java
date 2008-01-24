@@ -40,7 +40,7 @@ public class Histograma extends AbstractObjetoGrafico
      */
     public void dibujate(InterfaceEscalaGrafica escala)
     {
-        extremos = escala.dameExtremosCartesianos();
+        extremos = escala.getExtremosCartesianos();
         Point2D esquina = new Point2D.Double();
 
         int indiceColor = 0;

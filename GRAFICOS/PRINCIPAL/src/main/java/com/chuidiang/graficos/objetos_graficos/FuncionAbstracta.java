@@ -82,7 +82,7 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico
         if (color == null)
             return;
 
-        Rectangle2D extremos = escala.dameExtremosCartesianos();
+        Rectangle2D extremos = escala.getExtremosCartesianos();
         Point2D puntos[] = new Point2D[numeroPuntos];
         double x;
 

@@ -91,19 +91,19 @@ public class Mano
          ( ( e.getModifiersEx(  ) & InputEvent.BUTTON3_DOWN_MASK ) == InputEvent.BUTTON3_DOWN_MASK ) )
       {
          Point2D origen =
-            this.escala.dameCoordenadaUsuario( 
+            this.escala.getCoordenadaUsuario( 
                new Point2D.Double( 
                   this.x,
                   this.y ) );
-         origen=this.escala.dameCoordenadasCartesianas(origen);
+         origen=this.escala.getCoordenadasCartesianas(origen);
          Point2D destino =
-            this.escala.dameCoordenadaUsuario( 
+            this.escala.getCoordenadaUsuario( 
                new Point2D.Double( 
                   e.getX(  ),
                   e.getY(  ) ) );
-		 destino = this.escala.dameCoordenadasCartesianas(destino);
+		 destino = this.escala.getCoordenadasCartesianas(destino);
          
-         Rectangle2D extremos = escala.dameExtremosCartesianos(  );
+         Rectangle2D extremos = escala.getExtremosCartesianos(  );
 
          escala.tomaExtremos( 
             extremos.getMinX(  ) - ( destino.getX() - origen.getX() ),

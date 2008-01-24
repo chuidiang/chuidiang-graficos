@@ -113,7 +113,7 @@ public class EscalaGraficaCartesiana implements InterfaceEscalaGrafica
 	 *            Un punto en pixels.<br>
 	 * @return Un punto en coordenadas de usuario.<br>
 	 */
-	public Point2D dameCoordenadaUsuario(Point2D punto)
+	public Point2D getCoordenadaUsuario(Point2D punto)
 	{
 		Point2D resultado = new Point2D.Double();
 
@@ -133,7 +133,7 @@ public class EscalaGraficaCartesiana implements InterfaceEscalaGrafica
 	 * 
 	 * @return Las dimensiones del area de dibujo.<br>
 	 */
-	public Rectangle2D dameExtremosCartesianos()
+	public Rectangle2D getExtremosCartesianos()
 	{
 		Rectangle2D.Double extremos = new Rectangle2D.Double();
 		extremos.x = xMin;
@@ -594,7 +594,7 @@ public class EscalaGraficaCartesiana implements InterfaceEscalaGrafica
     /**
      * Devuelve el punto que se le pasa.
      */
-	public Point2D dameCoordenadasCartesianas(Point2D punto)
+	public Point2D getCoordenadasCartesianas(Point2D punto)
 	{
 		return punto;
 	}
@@ -602,8 +602,8 @@ public class EscalaGraficaCartesiana implements InterfaceEscalaGrafica
     /**
      * Devuelve los extremos cartesianos
      */
-	public Rectangle2D dameExtremos()
+	public Rectangle2D getExtremos()
 	{
-        return dameExtremosCartesianos();
+        return getExtremosCartesianos();
 	}
 }

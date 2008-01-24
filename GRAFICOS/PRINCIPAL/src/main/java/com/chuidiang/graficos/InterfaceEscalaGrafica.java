@@ -31,7 +31,7 @@ public interface InterfaceEscalaGrafica
      *            Un punto con coordenadas x,y de raton.
      * @return Un punto con coordenadas x,y de usuario.
      */
-    public Point2D dameCoordenadaUsuario(Point2D punto);
+    public Point2D getCoordenadaUsuario(Point2D punto);
     
     /**
      * Dadas una coordenadas de usuario propias del tipo de escala usada,
@@ -40,19 +40,20 @@ public interface InterfaceEscalaGrafica
      * usada
      * @return Un punto en coordenadas de usuario cartesianas
      */
-    public Point2D dameCoordenadasCartesianas (Point2D punto);
+    public Point2D getCoordenadasCartesianas (Point2D punto);
 
     /**
      * Devuelve los extremos del gr�fico en coordenadas cartesianas de usuario.
      */
-    public Rectangle2D dameExtremosCartesianos();
+    public Rectangle2D getExtremosCartesianos();
 
     /**
      * Devuelve los extremos del gr�fico en las coordenadas de usuario propias
      * de la escala que se est� usando (cartesianas o polares)
      * @return Extremos
      */
-    public Rectangle2D dameExtremos();
+    public Rectangle2D getExtremos();
+    
     /**
      * Se len pasa el alto y el ancho en pixels de la zona de dibujo.
      */

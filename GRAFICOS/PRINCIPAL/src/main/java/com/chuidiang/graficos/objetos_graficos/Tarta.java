@@ -97,7 +97,7 @@ public class Tarta extends AbstractObjetoGrafico
         if (porcentajes.length == 0) return;
         if (colores.length == 0) return;
         
-        extremos = escala.dameExtremosCartesianos();
+        extremos = escala.getExtremosCartesianos();
         double radio = dameRadio();
         Point2D centro = dameCentro();
         

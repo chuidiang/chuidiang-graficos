@@ -56,9 +56,9 @@ public class EscalaGraficaPolar implements InterfaceEscalaGrafica
 	 *            Punto con coordenadas en pixels.<br>
 	 * @return Punto con coordenadas de usuario.<br>
 	 */
-	public Point2D dameCoordenadaUsuario(Point2D punto)
+	public Point2D getCoordenadaUsuario(Point2D punto)
 	{
-		Point2D pUsuario = escala.dameCoordenadaUsuario(punto);
+		Point2D pUsuario = escala.getCoordenadaUsuario(punto);
 		Point2D pUsuarioPolar = new Point2D.Double();
 		pUsuarioPolar.setLocation(CartesianasPolares.dameModulo(
 				pUsuario.getX(), pUsuario.getY()), CartesianasPolares
@@ -72,9 +72,9 @@ public class EscalaGraficaPolar implements InterfaceEscalaGrafica
 	 * 
 	 * @return Rectangulo de dibujo.<br>
 	 */
-	public Rectangle2D dameExtremosCartesianos()
+	public Rectangle2D getExtremosCartesianos()
 	{
-		return escala.dameExtremosCartesianos();
+		return escala.getExtremosCartesianos();
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class EscalaGraficaPolar implements InterfaceEscalaGrafica
 	 */
 	public void pintaEjeX(double y, Color color)
 	{
-		Rectangle2D extremos = dameExtremosCartesianos();
+		Rectangle2D extremos = getExtremosCartesianos();
 		Point2D.Double[] eje = new Point2D.Double[2];
 		eje[0] = new Point2D.Double(0, y);
 		eje[1] = new Point2D.Double(extremos.getWidth(), y);
@@ -379,7 +379,7 @@ public class EscalaGraficaPolar implements InterfaceEscalaGrafica
     /**
      * Se le pasan unas coordenadas polares y devuelve las cartesianas adecudas
      */
-	public Point2D dameCoordenadasCartesianas(Point2D puntoPolar)
+	public Point2D getCoordenadasCartesianas(Point2D puntoPolar)
 	{
         Point2D puntoCartesiano = new Point2D.Double();
         puntoCartesiano.setLocation(
@@ -393,10 +393,10 @@ public class EscalaGraficaPolar implements InterfaceEscalaGrafica
      * La xmin es el radio m�s peque�o (que puede ser cero o m�s). La ymin
      * siempre es 0.0 y la m�s grande 2*PI.
      */
-	public Rectangle2D dameExtremos()
+	public Rectangle2D getExtremos()
 	{
 		Rectangle2D.Double resultado = new Rectangle2D.Double();
-		Rectangle2D cartesianos = this.dameExtremosCartesianos();
+		Rectangle2D cartesianos = this.getExtremosCartesianos();
 		if ((cartesianos.getX()<0) && 
 				((cartesianos.getX()+cartesianos.getWidth())>0) &&
 				(cartesianos.getY()<0) &&

@@ -64,7 +64,7 @@ public class CursorZoom extends AbstractObjetoGrafico implements
 
                 // Antes de hacer el zoom, se comprueba que el rectangulo no
                 // es demasiado peque�o
-                Rectangle2D extremos = escala.dameExtremosCartesianos();
+                Rectangle2D extremos = escala.getExtremosCartesianos();
                 if (((xMax - xMin) > extremos.getWidth() / 20.0)
                         && ((yMax - yMin) > extremos.getHeight() / 20.0))
                     escala.tomaExtremos(xMin, yMin, xMax, yMax);
