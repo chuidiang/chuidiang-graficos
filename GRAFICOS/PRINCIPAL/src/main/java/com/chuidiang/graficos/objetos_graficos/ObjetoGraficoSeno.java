@@ -9,11 +9,13 @@ package com.chuidiang.graficos.objetos_graficos;
 
 import java.awt.Color;
 
+import com.chuidiang.matematicas.funciones.Seno;
+
 /**
  * Objeto grï¿½fico que dibuja la funciï¿½n matemï¿½tica sin(x), Heread de
  * FuncionAbstracta implementando el mï¿½todo funcion():
  */
-public class Seno extends FuncionAbstracta
+public class ObjetoGraficoSeno extends FuncionAbstracta
 {
 
     /**
@@ -26,29 +28,43 @@ public class Seno extends FuncionAbstracta
      * en el que se dibujarï¿½ la funciï¿½n. No se comprueban los valores que se
      * pasan.
      */
-    public Seno(double amplitud, double frecuencia, double desfase, Color color)
+    public ObjetoGraficoSeno(double amplitud, double frecuencia, double desfase, Color color)
     {
         super(color);
-        this.amplitud = amplitud;
-        this.frecuencia = frecuencia;
-        this.desfase = desfase;
+        seno = new Seno();
+        seno.setAmplitud(amplitud);
+        seno.setFrecuencia(frecuencia);
+        seno.setDesfase(desfase);
     }
 
+    /** Función para cálculo del sin(x) */
+    private Seno seno;
+    
     /**
      * Devuelve el valor de y para un valor concreto de x. Se utiliza la funciï¿½n
-     * sin() con todos los parï¿½metros de frecuencia, amplitud y desfase.
+     * sin() con todos los parametros de frecuencia, amplitud y desfase.
      */
-    protected double funcion(double x)
+    public double getY(double x)
     {
-        return amplitud * Math.sin(2.0 * Math.PI * frecuencia * x + desfase);
+        return seno.getY(x);
     }
-
-    /** Amplitud de la funcion sin() en unidades de usuario del eje y */
-    private double amplitud;
-
-    /** Numero de ciclos por unidad de usuario del eje x */
-    private double frecuencia;
-
-    /** Desfase en radianes de la funciï¿½n seno. */
-    private double desfase;
+    
+	public double getAmplitud() {
+		return seno.getAmplitud();
+	}
+	public double getDesfase() {
+		return seno.getDesfase();
+	}
+	public double getFrecuencia() {
+		return seno.getFrecuencia();
+	}
+	public void setAmplitud(double amplitud) {
+		seno.setAmplitud(amplitud);
+	}
+	public void setDesfase(double desfase) {
+		seno.setDesfase(desfase);
+	}
+	public void setFrecuencia(double frecuencia) {
+		seno.setFrecuencia(frecuencia);
+	}
 }

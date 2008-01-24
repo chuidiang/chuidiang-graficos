@@ -1,7 +1,7 @@
 /*
- * Javier Abell�n. 25 Mayo 2004
+ * Javier Abellan. 25 Mayo 2004
  * 
- * Objeto gr�fico abstracto para pintar funciones matem�ticas y = f(x)
+ * Objeto grafico abstracto para pintar funciones matematicas y = f(x)
  */
 package com.chuidiang.graficos.objetos_graficos;
 
@@ -10,6 +10,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
+import com.chuidiang.matematicas.funciones.IfzFuncionMatematica;
 
 
 /**
@@ -17,7 +18,7 @@ import com.chuidiang.graficos.InterfaceEscalaGrafica;
  * Lienzo. Debe heredarse de esta clase y redefinir el m�todo funcion(). La
  * clase se encarga del dibujado de la funci�n sobre el Lienzo.
  */
-public abstract class FuncionAbstracta extends AbstractObjetoGrafico
+public abstract class FuncionAbstracta extends AbstractObjetoGrafico implements IfzFuncionMatematica
 {
 
     /**
@@ -26,7 +27,7 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico
      */
     public FuncionAbstracta(Color color)
     {
-        tomaColor(color);
+        setColor(color);
     }
 
     /**
@@ -34,7 +35,7 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico
      * dibujo cambiar� de color en el siguiente refresco del gr�fico. Si el
      * color es null, la funci�n dejar� de dibujarse.
      */
-    public void tomaColor(Color color)
+    public void setColor(Color color)
     {
         this.color = color;
     }
@@ -43,7 +44,7 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico
      * Devuelve el color con el que se est� dibujando la funci�n. Devuelve null
      * si previamente se le pas� a la clase un color null.
      */
-    public Color dameColor()
+    public Color getColor()
     {
         return color;
     }
@@ -54,7 +55,7 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico
      * m�todo dibujate. Si el n�mero de puntos es menor de 2, se ignora el
      * par�metro se deja el n�mero de puntos anterior.
      */
-    public void tomaNumeroPuntos(int numeroPuntos)
+    public void setNumeroPuntos(int numeroPuntos)
     {
         if (numeroPuntos < 2)
             return;
@@ -65,7 +66,7 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico
      * Devuelve el n�mero de puntos que se est� utilizando para dibujar la
      * funci�n.
      */
-    public int dameNumeroPuntos()
+    public int getNumeroPuntos()
     {
         return numeroPuntos;
     }
@@ -89,18 +90,11 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico
         for (int i = 0; i < numeroPuntos; i++)
         {
             x = extremos.getMinX() + i * extremos.getWidth() / numeroPuntos;
-            puntos[i] = new Point2D.Double(x, funcion(x));
+            puntos[i] = new Point2D.Double(x, getY(x));
         }
 
         escala.pintaPoliLinea(puntos, color);
     }
-
-    /**
-     * Funci�n que se va a dibujar. Las clases hijas de esta deben redefinir
-     * dicha funci�n, devolviendo el valor de y correspondiente a la x que se le
-     * pasa.
-     */
-    protected abstract double funcion(double x);
 
     /** Color con el que se dibuja la funci�n */
     private Color color;

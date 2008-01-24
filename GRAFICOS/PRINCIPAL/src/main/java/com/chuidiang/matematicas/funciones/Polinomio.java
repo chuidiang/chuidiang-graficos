@@ -29,7 +29,7 @@ public class Polinomio implements IfzFuncionMatematica {
      * formula
      * y = sumatorio coeficientes[i] * x ^ y
      */
-    public double funcion(double x) {
+    public double getY(double x) {
         double y = 0.0;
         for (int i = 0; i < coeficientes.length; i++) {
             y = y + (coeficientes[i] * Math.pow(x, i));

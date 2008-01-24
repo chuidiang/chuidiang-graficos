@@ -19,6 +19,9 @@ public class Seno implements IfzFuncionMatematica {
      * Frecuencia
      */
     double frecuencia = 1.0;
+    
+    /** desfase en radianes */
+    double desfase=0.0;
 
     /**
      * Devuelve la amplitud
@@ -52,11 +55,20 @@ public class Seno implements IfzFuncionMatematica {
         this.frecuencia = frecuencia;
     }
 
+    
     /**
      * Devuelve amplitud*sin(frecuencia*x) con la x en radianes.
      */
-    public double funcion(double x) {
-        return amplitud * Math.sin(frecuencia * x);
+    public double getY(double x) {
+        return amplitud * Math.sin(2.0 * Math.PI * frecuencia * x + desfase);
     }
+
+	public double getDesfase() {
+		return desfase;
+	}
+
+	public void setDesfase(double desfase) {
+		this.desfase = desfase;
+	}
 
 }
