@@ -4,10 +4,13 @@
  * Librer�a gr�fica
  */
 
-package com.chuidiang.graficos.objetos_graficos;
+package com.chuidiang.graficos.objetos_arrastrables.cursores;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+
+import com.chuidiang.graficos.objetos_graficos.AbstractObjetoGrafico;
+import com.chuidiang.graficos.objetos_graficos.ObservadorRaton;
 
 /**
  * Clase padre para cursores sobre los gr�ficos. Permite un cursor que se mueve

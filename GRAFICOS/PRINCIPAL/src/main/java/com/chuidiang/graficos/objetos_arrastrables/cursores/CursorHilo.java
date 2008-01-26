@@ -4,7 +4,7 @@
  * Librer�a gr�fica
  */
 
-package com.chuidiang.graficos.objetos_graficos;
+package com.chuidiang.graficos.objetos_arrastrables.cursores;
 
 import java.awt.Color;
 

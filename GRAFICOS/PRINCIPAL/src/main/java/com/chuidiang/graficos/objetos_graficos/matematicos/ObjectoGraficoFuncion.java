@@ -3,13 +3,14 @@
  * 
  * Objeto grafico abstracto para pintar funciones matematicas y = f(x)
  */
-package com.chuidiang.graficos.objetos_graficos;
+package com.chuidiang.graficos.objetos_graficos.matematicos;
 
 import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
+import com.chuidiang.graficos.objetos_graficos.AbstractObjetoGrafico;
 import com.chuidiang.matematicas.funciones.IfzFuncionMatematica;
 
 
@@ -18,16 +19,20 @@ import com.chuidiang.matematicas.funciones.IfzFuncionMatematica;
  * Lienzo. Debe heredarse de esta clase y redefinir el mï¿½todo funcion(). La
  * clase se encarga del dibujado de la funciï¿½n sobre el Lienzo.
  */
-public abstract class FuncionAbstracta extends AbstractObjetoGrafico implements IfzFuncionMatematica
+public class ObjectoGraficoFuncion extends AbstractObjetoGrafico implements IfzFuncionMatematica
 {
 
-    /**
+    private IfzFuncionMatematica funcion;
+
+	/**
      * Recoge el color que se le pasa y dibujarï¿½ la funciï¿½n matemï¿½tica con ese
      * color.
+     * @funcion La función matemática, no puede ser null.
      */
-    public FuncionAbstracta(Color color)
+    public ObjectoGraficoFuncion(IfzFuncionMatematica funcion)
     {
-        setColor(color);
+    	assert funcion!=null;
+    	this.funcion = funcion;
     }
 
     /**
@@ -50,10 +55,10 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico implements 
     }
 
     /**
-     * Se le pasa el nï¿½mero de puntos a dibujar de la funciï¿½n. Se dibujarï¿½n esos
+     * Se le pasa el numero de puntos a dibujar de la funcion. Se dibujaran esos
      * puntos entre la x minima y la x maxima de la escala que se pase en el
-     * mï¿½todo dibujate. Si el nï¿½mero de puntos es menor de 2, se ignora el
-     * parï¿½metro se deja el nï¿½mero de puntos anterior.
+     * metodo dibujate. Si el numero de puntos es menor de 2, se ignora el
+     * parametro se deja el numero de puntos anterior.
      */
     public void setNumeroPuntos(int numeroPuntos)
     {
@@ -63,8 +68,8 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico implements 
     }
 
     /**
-     * Devuelve el nï¿½mero de puntos que se estï¿½ utilizando para dibujar la
-     * funciï¿½n.
+     * Devuelve el numero de puntos que se esta utilizando para dibujar la
+     * funcion.
      */
     public int getNumeroPuntos()
     {
@@ -72,11 +77,11 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico implements 
     }
 
     /**
-     * Dibuja la funciï¿½n matemï¿½tica sobre la escala. Obtiene la x minima y
+     * Dibuja la funcion matematica sobre la escala. Obtiene la x minima y
      * maxima de la escala para hacer un bucle de 500 puntos. Calcula los 500
-     * puntos de la funciï¿½n para todas esas x y dibuja segementos que unen
-     * consecutivamente todos esos puntos, haciendo que la funciï¿½n quede
-     * dibujada sobre una lï¿½nea.
+     * puntos de la funcion para todas esas x y dibuja segementos que unen
+     * consecutivamente todos esos puntos, haciendo que la funcion quede
+     * dibujada sobre una linea.
      */
     public void dibujate(InterfaceEscalaGrafica escala)
     {
@@ -101,4 +106,8 @@ public abstract class FuncionAbstracta extends AbstractObjetoGrafico implements 
 
     /** Nï¿½mero de puntos que se van a dibujar de la funciï¿½n. */
     private int numeroPuntos = 500;
+
+	public double getY(double x) {
+		return funcion.getY(x);
+	}
 }

@@ -6,7 +6,7 @@ package com.chuidiang.matematicas.funciones;
 /**
  * Funcion sin(x).
  * Permite modificar amplitud y frecuencia, de forma que
- * y = amplitud*sin(frecuencia*x)
+ * y = amplitud*sin(frecuencia*x+desfase)
  * @author chuidiang
  *
  */
@@ -63,10 +63,18 @@ public class Seno implements IfzFuncionMatematica {
         return amplitud * Math.sin(2.0 * Math.PI * frecuencia * x + desfase);
     }
 
+    /** Devuelve el desfase
+     * 
+     * @return
+     */
 	public double getDesfase() {
 		return desfase;
 	}
 
+	/**
+	 * Se le pasa el desfase, en radianes.
+	 * @param desfase
+	 */
 	public void setDesfase(double desfase) {
 		this.desfase = desfase;
 	}

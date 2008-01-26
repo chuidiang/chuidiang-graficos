@@ -4,7 +4,7 @@
  * Librer�a gr�fica
  */
 
-package com.chuidiang.graficos.objetos_graficos;
+package com.chuidiang.graficos.objetos_arrastrables.cursores;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -12,6 +12,8 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
+import com.chuidiang.graficos.objetos_graficos.AbstractObjetoGrafico;
+import com.chuidiang.graficos.objetos_graficos.ObservadorRaton;
 
 
 /**

@@ -5,27 +5,27 @@
  */
 
 
-package com.chuidiang.graficos.objetos_graficos;
+package com.chuidiang.graficos.objetos_graficos.matematicos;
 
 import java.awt.Color;
 
 import com.chuidiang.matematicas.funciones.Seno;
 
 /**
- * Objeto gr�fico que dibuja la funci�n matem�tica sin(x), Heread de
+ * Objeto grafico que dibuja la funcion matematica sin(x), Heread de
  * FuncionAbstracta implementando el m�todo funcion():
  */
 public class ObjetoGraficoSeno extends FuncionAbstracta
 {
 
     /**
-     * Crea un objeto gr�fico Seno con la amplitud, frecuencia, desfase y color
+     * Crea un objeto grafico Seno con la amplitud, frecuencia, desfase y color
      * que se le indican. La amplitud va en las mismas unidades de usuario que
-     * el eje y del Lienzo donde se quiera dibujar esta funci�n. La frecuencia
-     * es el n�mero de ciclos que deben dibujarse por cada unidad del eje x, en
-     * unidades de usuario. El desfase en el �ngulo en radianes de desfase de la
-     * funci�n seno. Si no se quieren cosas raras, un buen valor es 0.0 color es
-     * en el que se dibujar� la funci�n. No se comprueban los valores que se
+     * el eje y del Lienzo donde se quiera dibujar esta funcion. La frecuencia
+     * es el numero de ciclos que deben dibujarse por cada unidad del eje x, en
+     * unidades de usuario. El desfase en el angulo en radianes de desfase de la
+     * funcion seno. Si no se quieren cosas raras, un buen valor es 0.0 color es
+     * en el que se dibujara la funcion. No se comprueban los valores que se
      * pasan.
      */
     public ObjetoGraficoSeno(double amplitud, double frecuencia, double desfase, Color color)

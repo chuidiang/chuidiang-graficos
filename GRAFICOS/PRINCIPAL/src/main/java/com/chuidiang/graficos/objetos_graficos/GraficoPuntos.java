@@ -1,7 +1,7 @@
 /**
- * Javier Abell�n. 6 Abril 2006
+ * Javier Abellan. 6 Abril 2006
  * 
- * Librer�a gr�fica
+ * Libreria grafica
  */
 
 
@@ -15,7 +15,7 @@ import com.chuidiang.graficos.InterfaceEscalaGrafica;
 
 
 /**
- * Objeto gr�fico que dibuja un array de puntos x,y.<br>
+ * Objeto grafico que dibuja un array de puntos x,y.<br>
  */
 public class GraficoPuntos
         extends AbstractObjetoGrafico
