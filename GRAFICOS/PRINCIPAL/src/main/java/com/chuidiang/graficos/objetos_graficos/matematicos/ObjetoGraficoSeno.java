@@ -15,7 +15,7 @@ import com.chuidiang.matematicas.funciones.Seno;
  * Objeto grafico que dibuja la funcion matematica sin(x), Heread de
  * FuncionAbstracta implementando el m�todo funcion():
  */
-public class ObjetoGraficoSeno extends FuncionAbstracta
+public class ObjetoGraficoSeno extends ObjectoGraficoFuncion
 {
 
     /**
@@ -30,8 +30,9 @@ public class ObjetoGraficoSeno extends FuncionAbstracta
      */
     public ObjetoGraficoSeno(double amplitud, double frecuencia, double desfase, Color color)
     {
-        super(color);
-        seno = new Seno();
+        super(new Seno());
+        seno = (Seno)getFuncion();
+        setColor(color);
         seno.setAmplitud(amplitud);
         seno.setFrecuencia(frecuencia);
         seno.setDesfase(desfase);

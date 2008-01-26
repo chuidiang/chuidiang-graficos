@@ -110,4 +110,12 @@ public class ObjectoGraficoFuncion extends AbstractObjetoGrafico implements IfzF
 	public double getY(double x) {
 		return funcion.getY(x);
 	}
+
+	public IfzFuncionMatematica getFuncion() {
+		return funcion;
+	}
+
+	public void setFuncion(IfzFuncionMatematica funcion) {
+		this.funcion = funcion;
+	}
 }

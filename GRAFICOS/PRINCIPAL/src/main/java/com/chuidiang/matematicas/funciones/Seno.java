@@ -6,7 +6,7 @@ package com.chuidiang.matematicas.funciones;
 /**
  * Funcion sin(x).
  * Permite modificar amplitud y frecuencia, de forma que
- * y = amplitud*sin(frecuencia*x+desfase)
+ * y = amplitud*sin(2*PI*frecuencia*x+desfase)
  * @author chuidiang
  *
  */
@@ -16,7 +16,7 @@ public class Seno implements IfzFuncionMatematica {
      */
     double amplitud = 1.0;
     /**
-     * Frecuencia
+     * Frecuencia en ciclos/segundo
      */
     double frecuencia = 1.0;
     
