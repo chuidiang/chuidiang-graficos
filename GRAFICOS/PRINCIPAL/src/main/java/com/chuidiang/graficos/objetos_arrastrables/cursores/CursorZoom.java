@@ -3,106 +3,90 @@
  * 
  * Librer�a gr�fica
  */
-
 package com.chuidiang.graficos.objetos_arrastrables.cursores;
 
-import java.awt.Color;
-import java.awt.event.MouseEvent;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
-
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
-import com.chuidiang.graficos.objetos_graficos.AbstractObjetoGrafico;
 import com.chuidiang.graficos.objetos_graficos.ObservadorRaton;
+
+import java.awt.event.MouseEvent;
+import java.awt.geom.Rectangle2D;
 
 
 /**
  * Cursor para hacer zoom. Se hace click y se arrastra el rat�n. Sale un
  * rect�ngulo que va creciendo con el rat�n. Al sotar, se hace zoom.
  */
-public class CursorZoom extends AbstractObjetoGrafico implements
-        ObservadorRaton
+public class CursorZoom
+        extends CursorElastico
 {
-    /**
-     * M�todo al que se llama con los eventos de rat�n. Al pulsar el rat�n
-     * comienza el proceso. Mientras se arrastra, se va redibujando el
-     * rect�ngulo. al sotar se hace el zoom.
-     */
-    public boolean eventoRaton(MouseEvent e, int tipoEvento, double x, double y)
-    {
-        // Si se arrastra el rat�n, se va rehaciendo el rect�ngulo.
-        if (tipoEvento == ObservadorRaton.ARRASTRE)
-        {
-            if (!pintar)
-                return false;
-            this.x2 = x;
-            this.y2 = y;
-            return true;
-        }
+   //~ Metodos -----------------------------------------------------------------
 
-        // Al pulsar, comienza el proceso y se inicializan las esquinas del
-        // rectangulo a la posicion actual del raton.
-        if ((tipoEvento == ObservadorRaton.PULSADO)
-                && (e.getButton() == MouseEvent.BUTTON1))
-        {
-            pintar = true;
-            this.x1 = x;
-            this.y1 = y;
-            this.x2 = x;
-            this.y2 = y;
-            return true;
-        }
+   /**
+    * M�todo al que se llama con los eventos de rat�n. Al pulsar el
+    * rat�n comienza el proceso. Mientras se arrastra, se va redibujando el
+    * rect�ngulo. al sotar se hace el zoom.
+    *
+    * @param e  .<br>
+    * @param tipoEvento  .<br>
+    * @param x  .<br>
+    * @param y  .<br>
+    *
+    * @return  .<br>
+    */
+   public boolean eventoRaton( 
+      MouseEvent e,
+      int tipoEvento,
+      double x,
+      double y )
+   {
+      boolean tratadosEventosComunes = super.eventoRaton( 
+            e,
+            tipoEvento,
+            x,
+            y );
 
-        // Al soltar, se hace el zoom.
-        if ((tipoEvento == ObservadorRaton.SOLTADO)
-                && (e.getButton() == MouseEvent.BUTTON1))
-        {
-            if (this.escala != null)
+      if( tratadosEventosComunes )
+      {
+         return true;
+      }
+
+      // Al soltar, se hace el zoom.
+      if( ( tipoEvento == ObservadorRaton.SOLTADO ) &&
+         ( e.getButton(  ) == MouseEvent.BUTTON1 ) )
+      {
+         if( this.escala != null )
+         {
+            double xMin = Math.min( 
+                  x1,
+                  x2 );
+            double xMax = Math.max( 
+                  x1,
+                  x2 );
+            double yMin = Math.min( 
+                  y1,
+                  y2 );
+            double yMax = Math.max( 
+                  y1,
+                  y2 );
+
+            // Antes de hacer el zoom, se comprueba que el rectangulo no
+            // es demasiado peque�o
+            Rectangle2D extremos = escala.getExtremosCartesianos(  );
+
+            if( ( ( xMax - xMin ) > ( extremos.getWidth(  ) / 20.0 ) ) &&
+               ( ( yMax - yMin ) > ( extremos.getHeight(  ) / 20.0 ) ) )
             {
-                double xMin = Math.min(x1, x2);
-                double xMax = Math.max(x1, x2);
-                double yMin = Math.min(y1, y2);
-                double yMax = Math.max(y1, y2);
-
-                // Antes de hacer el zoom, se comprueba que el rectangulo no
-                // es demasiado peque�o
-                Rectangle2D extremos = escala.getExtremosCartesianos();
-                if (((xMax - xMin) > extremos.getWidth() / 20.0)
-                        && ((yMax - yMin) > extremos.getHeight() / 20.0))
-                    escala.tomaExtremos(xMin, yMin, xMax, yMax);
+               escala.tomaExtremos( 
+                  xMin,
+                  yMin,
+                  xMax,
+                  yMax );
             }
-            pintar = false;
-        }
-        return false;
-    }
+         }
 
-    /**
-     * Dibuja el rectangulo seg�n se va moviendo el rat�n. Se guarda la escala
-     * que se le pasa para poder hacerle zoom
-     */
-    public void dibujate(InterfaceEscalaGrafica escala)
-    {
-        this.escala = escala;
-        if (!pintar)
-            return;
-        Point2D[] rectangulo = new Point2D.Double[5];
-        rectangulo[0] = new Point2D.Double(x1, y1);
-        rectangulo[1] = new Point2D.Double(x1, y2);
-        rectangulo[2] = new Point2D.Double(x2, y2);
-        rectangulo[3] = new Point2D.Double(x2, y1);
-        rectangulo[4] = new Point2D.Double(x1, y1);
-        escala.pintaPoliLinea(rectangulo, Color.WHITE);
-    }
+         pintar = false;
+      }
 
-    /** Posicion de una esquina del rectangulo */
-    private double x1, x2;
-
-    /** Posicion de otra esquina del rectangulo */
-    private double y1, y2;
-
-    /** Si hay que pintar o no el rectangulo */
-    private boolean pintar = false;
-
-    /** Escala sobre la que se va a hacer zoom. */
-    private InterfaceEscalaGrafica escala = null;
+      return false;
+   }
 }
