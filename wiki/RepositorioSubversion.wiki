@@ -1,0 +1,17 @@
+#summary Bajarse los fuentes con subversion.
+#labels Phase-Implementation
+
+= Repositorios =
+
+En el repositorio de subversion hay dos proyectos: GRAFICOS y GRAFICOS-EJEMPLOS. El primero es la librería en sí, con sus test de JUnit. El segundo es para programas de prueba y ejemplos de la librería.
+
+
+= Detalles =
+
+Si eres usuario registrado en este proyecto, puedes bajarte los fuentes para modificarlos con 
+
+svn checkout https://chuidiang-graficos.googlecode.com/svn/GRAFICOS/PRINCIPAL/ chuidiang-graficos --username tu_usuario
+
+si no eres usuario registrado, puedes bajarte igualmente los fuentes con
+
+svn checkout http://chuidiang-graficos.googlecode.com/svn/GRAFICOS/PRINCIPAL/ chuidiang-graficos-read-only
