@@ -14,10 +14,11 @@ import com.chuidiang.graficos.EscalaGraficaCartesiana;
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
 import com.chuidiang.graficos.Lienzo;
 import com.chuidiang.graficos.botones.VisorRaton;
-import com.chuidiang.graficos.objetos_graficos.CursorZoom;
+import com.chuidiang.graficos.objetos_arrastrables.cursores.CursorZoom;
 import com.chuidiang.graficos.objetos_graficos.Mano;
 import com.chuidiang.graficos.objetos_graficos.RejillaFija;
-import com.chuidiang.graficos.objetos_graficos.Seno;
+import com.chuidiang.graficos.objetos_graficos.matematicos.ObjetoGraficoSeno;
+import com.chuidiang.matematicas.funciones.Seno;
 
 /**
  * Ejemplo de uso de los Objetos gr�ficos Seno y RejillaFija.
@@ -60,7 +61,7 @@ public class AppletSeno extends JApplet
         lienzo.tomaObjetoGrafico(rejilla);
         
         // La funci�n Seno para el lienzo.
-        Seno seno = new Seno(1.0, 1.0, 0.0, Color.GREEN);
+        ObjetoGraficoSeno seno = new ObjetoGraficoSeno(1.0, 1.0, 0.0, Color.GREEN);
         lienzo.tomaObjetoGrafico(seno);
         
         // Un editor de coordenada x y otro de y

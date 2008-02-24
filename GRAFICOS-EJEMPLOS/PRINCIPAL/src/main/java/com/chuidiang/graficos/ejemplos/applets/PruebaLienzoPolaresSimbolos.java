@@ -19,7 +19,7 @@ import javax.swing.WindowConstants;
 
 import com.chuidiang.graficos.EscalaGraficaPolar;
 import com.chuidiang.graficos.Lienzo;
-import com.chuidiang.graficos.objetos_graficos.CursorHilo;
+import com.chuidiang.graficos.objetos_arrastrables.cursores.CursorHilo;
 import com.chuidiang.graficos.objetos_graficos.GraficoSimbolos;
 import com.chuidiang.graficos.objetos_graficos.Mano;
 import com.chuidiang.graficos.objetos_graficos.RejillaCirculoPolar;

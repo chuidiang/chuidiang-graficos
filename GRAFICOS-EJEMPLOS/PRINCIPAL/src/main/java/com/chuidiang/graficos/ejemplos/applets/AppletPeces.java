@@ -14,8 +14,8 @@ import javax.swing.ImageIcon;
 
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
 import com.chuidiang.graficos.Lienzo;
-import com.chuidiang.graficos.objetos_graficos.CursorHilo;
-import com.chuidiang.graficos.objetos_graficos.CursorZoom;
+import com.chuidiang.graficos.objetos_arrastrables.cursores.CursorHilo;
+import com.chuidiang.graficos.objetos_arrastrables.cursores.CursorZoom;
 import com.chuidiang.graficos.objetos_graficos.GraficoSimbolos;
 import com.chuidiang.graficos.objetos_graficos.Mano;
 

@@ -9,7 +9,7 @@ import java.awt.Color;
 
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
 import com.chuidiang.graficos.Lienzo;
-import com.chuidiang.graficos.objetos_graficos.CursorHilo;
+import com.chuidiang.graficos.objetos_arrastrables.cursores.CursorHilo;
 import com.chuidiang.graficos.objetos_graficos.Histograma;
 /**
  * Ejemplo de un Histograma sobre un Lienzo.

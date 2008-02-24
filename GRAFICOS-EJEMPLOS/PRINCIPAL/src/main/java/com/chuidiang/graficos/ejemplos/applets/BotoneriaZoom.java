@@ -11,6 +11,7 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
+import com.chuidiang.graficos.botones.ZoomHistorico;
 import com.chuidiang.graficos.botones.ZoomPorcentaje;
 /**
  *
@@ -33,8 +34,11 @@ public class BotoneriaZoom extends JPanel
         ZoomPorcentaje alejar = new ZoomPorcentaje (escala, -10);
         alejar.setText ("-");
         
+        ZoomHistorico zoomHistorico = new ZoomHistorico(escala,5);
+        
         add (acercar);
         add (alejar);
+        add( zoomHistorico );
     }
     
 }

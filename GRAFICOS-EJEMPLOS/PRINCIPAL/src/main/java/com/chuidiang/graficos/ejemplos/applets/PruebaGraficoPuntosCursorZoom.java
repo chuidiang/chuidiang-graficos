@@ -16,7 +16,7 @@ import com.chuidiang.graficos.EscalaGraficaCartesiana;
 import com.chuidiang.graficos.InterfaceEscalaGrafica;
 import com.chuidiang.graficos.Lienzo;
 import com.chuidiang.graficos.botones.VisorRaton;
-import com.chuidiang.graficos.objetos_graficos.CursorZoom;
+import com.chuidiang.graficos.objetos_arrastrables.cursores.CursorZoom;
 import com.chuidiang.graficos.objetos_graficos.GraficoFuncionPorPuntos;
 import com.chuidiang.graficos.objetos_graficos.Mano;
 import com.chuidiang.graficos.objetos_graficos.RejillaFija;
