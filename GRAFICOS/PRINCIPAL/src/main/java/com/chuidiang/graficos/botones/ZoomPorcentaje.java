@@ -21,7 +21,7 @@ import com.chuidiang.matematicas.UtilRectangulo;
  * pas�ndole la EscalaGr�fica sobre la que debe actuar y el porcentaje de
  * acercamiento o alejamiento que se quiere cada vez que se pulse el bot�n.
  */
-public class ZoomPorcentaje extends JButton
+public class ZoomPorcentaje extends JButton implements InterfaceZoom<Integer>
 {
     /**
 	 * Serial uid
@@ -44,7 +44,7 @@ public class ZoomPorcentaje extends JButton
         {
             public void actionPerformed(ActionEvent e)
             {
-                efectuarZoom();
+                efectuarZoom(ZoomPorcentaje.this.damePorcentaje());
             }
         });
     }
@@ -73,13 +73,13 @@ public class ZoomPorcentaje extends JButton
      * Realiza el zoom con el porcentaje interno de la clase. El porcentaje va
      * de -99 a 99. Un porcentaje positivo acerca, uno negativo aleja.
      */
-    protected void efectuarZoom()
+    public void efectuarZoom(Integer unPorcentaje)
     {
         Rectangle2D extremos = escala.getExtremosCartesianos(  );
 
         Rectangle2D nuevo = UtilRectangulo.agrandar( 
               extremos,
-              porcentaje );
+              unPorcentaje.intValue() );
         escala.tomaExtremos( 
            nuevo.getMinX(  ),
            nuevo.getMinY(  ),
